@@ -26,17 +26,17 @@ public class Program {
 		switch (operacao) {
 			case "I":
 			case "i":
-				mensagem = String.format("O produto %s de preço R$ %.2f foi incluído com sucesso", descricao, preco);
+				mensagem = inserirProduto(descricao, preco);
 				break;
 
 			case "A":
 			case "a":
-				mensagem = String.format("O produto %s de preço R$ %.2f foi alterado com sucesso", descricao, preco);
+				mensagem = alterarProduto(descricao, preco);
 				break;
 
 			case "R":
 			case "r":
-				mensagem = String.format("O produto %s de preço R$ %.2f foi removido com sucesso", descricao, preco);
+				mensagem = removerProduto(descricao, preco);
 				break;
 
 			default:
@@ -47,6 +47,18 @@ public class Program {
 		// saída:
 		// mensagem
 		System.out.println(mensagem);
+	}
+
+	public static String inserirProduto(String descricao, double preco) {
+		return String.format("O produto %s de preço R$ %.2f foi incluído com sucesso", descricao, preco);
+	}
+
+	public static String alterarProduto(String descricao, double preco) {
+		return String.format("O produto %s de preço R$ %.2f foi alterado com sucesso", descricao, preco);
+	}
+	
+	public static String removerProduto(String descricao, double preco) {
+		return String.format("O produto %s de preço R$ %.2f foi removido com sucesso", descricao, preco);
 	}
 
 }
